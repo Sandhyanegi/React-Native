@@ -1,4 +1,4 @@
-import { StyleSheet,View ,Text} from "react-native";
+import { StyleSheet,View ,Dimensions} from "react-native";
 
 function Card({children}){
     return(
@@ -8,11 +8,13 @@ function Card({children}){
 
 export default Card;
 
+const deviceWidth = Dimensions.get('window').width;
+
 const styles = StyleSheet.create({
     card:{
         justifyContent:'center',
         alignItems:'center',
-        marginTop:36,
+        marginTop:deviceWidth < 380 ? 18 : 36,
         padding:16,
         backgroundColor:'#3b021f',
         marginHorizontal:24,
